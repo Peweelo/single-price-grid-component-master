@@ -1,0 +1,175 @@
+@use 'reset';
+@use 'colors';
+
+html {
+	font-family: 'Karla', sans-serif;
+	font-size: 62.5%;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: colors.$Light-Gray;
+	.card {
+		max-width: 1200px;
+		width: 60%;
+		min-height: 65vh;
+		height: 1px;
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0px 8px 10px rgba(128, 128, 128, 0.241), -10px 8px 15px rgba(128, 128, 128, 0.241),
+			10px 8px 15px rgba(128, 128, 128, 0.241);
+
+		&-upper {
+			width: 100%;
+			height: 40%;
+			&-texts {
+				height: 50%;
+				padding: 5em;
+				display: flex;
+				flex-direction: column;
+				&-text {
+					height: 100%;
+					align-items: start;
+					justify-content: space-around;
+					font-size: 2.3rem;
+
+					&.blue {
+						margin-bottom: 1em;
+						color: colors.$Cyan;
+						font-weight: bold;
+					}
+
+					&.yellow {
+						margin-bottom: 0.7em;
+						color: colors.$Bright-Yellow;
+					}
+
+					&.grey {
+						color: colors.$Grayish-Blue;
+						line-height: 35px;
+					}
+				}
+			}
+		}
+
+		&-lower {
+			width: 100%;
+			height: 60%;
+			border-radius: 0 0 15px 15px;
+			display: flex;
+			flex-direction: row-reverse;
+			overflow: hidden;
+			&-right {
+				width: 50%;
+				height: 100%;
+				background-color: hsla(179, 62%, 43%, 0.705);
+
+				&-texts {
+					padding: 2em;
+					font-size: 2.3rem;
+					color: white;
+
+					&-text {
+						margin-bottom: 2em;
+						font-weight: bold;
+					}
+					&-links {
+						list-style-type: none;
+					}
+				}
+			}
+
+			&-left {
+				width: 50%;
+				height: 100%;
+				background-color: hsl(179, 62%, 43%);
+				color: white;
+
+				&-texts {
+					font-size: 2.3rem;
+					padding: 2em;
+					display: flex;
+					align-items: start;
+					flex-direction: column;
+
+					&-price {
+						margin-top: 0.7em;
+						font-weight: bold;
+						font-size: 4rem;
+						display: flex;
+						align-items: center;
+						span {
+							font-weight: 500;
+							color: colors.$Grayish-Blue;
+							font-size: 2rem;
+							margin-left: 1em;
+						}
+					}
+
+					&-desc {
+						margin-top: 0.7em;
+					}
+
+					&-btn {
+						cursor: pointer;
+						width: 100%;
+						font-size: 2rem;
+						background-color: colors.$Bright-Yellow;
+						color: white;
+						border-radius: 10px;
+						border-color: transparent;
+						margin-top: 2.5em;
+						padding: 0.9em 1.8em;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	main {
+		.card {
+			margin: 2em;
+			width: 90%;
+			height: auto;
+
+			&-upper {
+				&-texts {
+					padding: 2em;
+					&-text {
+						font-size: 1.8rem;
+					}
+				}
+			}
+			&-lower {
+				flex-direction: column-reverse;
+
+				&-right {
+					width: 100%;
+
+					&-texts {
+						padding: 20px;
+						&-links {
+							&-link {
+								font-size: 1.8rem;
+							}
+						}
+					}
+				}
+
+				&-left {
+					width: 100%;
+
+					&-texts {
+						padding: 20px;
+					}
+				}
+			}
+		}
+	}
+}
